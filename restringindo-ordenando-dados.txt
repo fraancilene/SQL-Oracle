@@ -25,10 +25,47 @@ SELECT  first_name, last_name, job_id, department_id, hire_date
 FROM employees 
 WHERE hire_date = to_date('30/01/2004', 'DD/MM/YYYY');
 
--- utilizando operadores de comparação
+-- UTILIZANDO OPERADORES DE COMPARAÇÃO
+-- selecionando salarios maior ou igual a 10000
 SELECT last_name, salary
 FROM EMPLOYEES
 WHERE salary >=10000;
+
+-- selecionando salarios entre 10000 e 15000
+SELECT last_name, salary
+FROM employees 
+WHERE salary BETWEEN 10000 AND 15000;
+
+-- selecionando valores dentro de uma lista
+SELECT employee_id, last_name, salary, manager_id, job_id
+FROM employees 
+WHERE job_id IN ('IT_PROG', 'FI_ACCOUNT', 'SA_REP');
+
+-- OPERADOR LIKE
+--* % combina com zero ou mais caractereres
+--* _ combina com um e somente um caracter
+SELECT first_name, last_name, job_id
+FROM employees 
+WHERE first_name LIKE 'Sa%'; -- nomes que começam com Sa
+
+SELECT first_name, last_name, job_id
+FROM employees 
+WHERE last_name LIKE '_a%'; -- nomes que o sobrenome comece com um caracter qualquer, seguido de a, seguido de qualquer coisa
+
+SELECT first_name, last_name, job_id
+FROM employees 
+WHERE last_name LIKE '%a'; -- selecionando sobrenomes onde a ultima letra é a
+
+-- COMPARAÇÕES COM VALOR NULO
+-- qualquer comparação com valor null retorna o booleano Null
+-- para verificar de um valor é null deve ser utilizado a expressão IS NULL.
+
+
+
+
+
+
+
 
 
 -- classificar as linhas recuperadas por uma consulta
