@@ -1,0 +1,35 @@
+-- RESTRINGINDO E ORDENANDO DADOS --
+SELECT  * FROM EMPLOYEES;
+
+-- Restringir as linhas recuperadas por uma consulta com clausula WHERE
+SELECT employee_id, last_name, job_id, department_id 
+FROM employees 
+WHERE department_id = 60;
+
+SELECT employee_id, last_name, job_id, department_id 
+FROM employees 
+WHERE job_id = 'IT_PROG';
+
+/** strings de caracteres e datas são delimitadas pos aspas simples('')
+ * valores de strings de caracteres são case sensitivos
+ * valores de Strings de data são sensitivos ao formato definido para o banco de dados ou a sessão
+ * O formato Default para exibição de datas mais utilizados no Brasil é 'DD/MM/YYY' ou 'DD/MM/RR'
+ */
+
+-- utilizando Strings de caracteres e datas na cláusula where
+SELECT  first_name, last_name, job_id, department_id, hire_date
+FROM employees 
+WHERE last_name = 'King';
+
+SELECT  first_name, last_name, job_id, department_id, hire_date
+FROM employees 
+WHERE hire_date = to_date('30/01/2004', 'DD/MM/YYYY');
+
+-- utilizando operadores de comparação
+SELECT last_name, salary
+FROM EMPLOYEES
+WHERE salary >=10000;
+
+
+-- classificar as linhas recuperadas por uma consulta
+-- utilizar váriabeis de substituição (&)

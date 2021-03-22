@@ -1,0 +1,25 @@
+-- para usar o schema HR tive que fazer esses comandos antes.
+alter session set "_ORACLE_SCRIPT"=true;  
+
+CREATE USER HR IDENTIFIED BY oracle;
+
+GRANT CONNECT TO HR;
+GRANT CONNECT, resource, dba TO HR;
+
+GRANT CREATE SESSION  TO HR; -- deu erro
+
+GRANT unlimited tablespace TO HR;
+GRANT SELECT , INSERT, UPDATE TO HR;
+
+-- link das instruções para instalar/usar o schema HR
+--https://docs.oracle.com/en/database/oracle/oracle-database/12.2/comsc/installing-sample-schemas.html#GUID-4D4984DD-A5F7-4080-A6F8-6306DA88E9FC
+
+
+SELECT * FROM employees;
+
+
+
+
+
+
+
